@@ -67,7 +67,7 @@ $(function() {
         }
         
         function detectedPattern(patternAngle){
-            if(patternAngle < channelMax){
+            if(patternAngle <= channelMax){
                 if(lineData.top.slope < 0
                     && lineData.bottom.slope < 0
                     && !lineData.top.isHorizontal
