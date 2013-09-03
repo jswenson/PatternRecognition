@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Trading Pattern Detection Software Demo</title>
+    <link href="patterns.css" rel="stylesheet">
+    <script src="jquery.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="main">
+    <div id="inner">
+        <header>
+            <h1>Trading Pattern Detection Software Demo</h1>
+            <label>Select Chart: <select id="chartSelect" autocomplete="off">
+                <!--option value="nkd">Nikkei 225 Index Futures 3 Month</option-->
+                <option value="nkd" selected="selected">Nikkei 225 Index Futures 1 Year</option>
+                <option value="spm">S&P MidCap 400 Index Futures 1 Month</option>
+                <option value="spy">S&P MidCap 400 Index Futures 1 Year</option>
+                <option value="yen">Japanese Yen Futures</option>
+            </select></label>
+        </header>
+        <div class="directions">
+           <img src="sample.png" class="sampleimg">
+           <section>
+           Draw two lines on the chart below to outline a pattern.  The top line should touch two or more candlestick highs, and the bottom line should touch two or more candlestick lows. The lines should not cross.
+           </section>
+        </div>    
+        <article class="description" id="bullFlagCH">
+            <strong>Bull Flag Channel: </strong>
+            The bull flag pattern is found within an uptrend in a stock.  This pattern is named for the resemblance of a flag on a pole.  The bull flag is a continuation pattern which only slightly retraces the advance preceding it.  The technical buy point is when price penetrates the upper trend line of the flag area, ideally on volume expansion.    </article>
+        <article class="description" id="bearFlagCH">
+            <strong>Bear Flag Channel: </strong>
+            The bear flag pattern is found in a downtrending stock.  This pattern is named for the resemblance of an inverted flag on a pole.  The bear flag is a continuation pattern which only slightly retraces the decline preceding it.  The technical sell point is when price penetrates the lower trend line of the flag area, ideally on volume expansion.
+        </article>
+        <article class="description" id="channel">
+            <strong>Channel: </strong>
+            When price trends upward or downward and fits between two parallel trendlines, the chart pattern is called a channel. Breakout occurs when price closes outside the trendline boundary and can be in any direction.
+        </article>
+        <article class="description" id="triangle">
+            <strong>Triangle: </strong>
+            Triangle is mainly considered to be a continuation pattern that signals a period of consolidation in a trend followed by a resumption of the prior trend. It is formed by the convergence of a descending resistance line and an ascending support line.
+        </article>
+        <article class="description" id="fallingWedge">
+            <strong>Falling Wedge: </strong>
+            The falling wedge is a generally bullish pattern signaling that one will likely see the price break upwards through the wedge and move into an uptrend. The trendlines of this pattern converge, with both being slanted in a downward direction as the price is trading in a downtrend.
+        </article>
+        <article class="description" id="risingWedge">
+            <strong>Rising Wedge: </strong>
+            A rising wedge is a bearish pattern that signals that the security is likely to head in a downward direction. The trendlines of this pattern converge, with both trendlines slanted in an upward direction.
+        </article>
+        <article class="description" id="desTriangle">
+            <strong>Descending Triangle: </strong>
+            The descending triangle is the opposite of the ascending triangle in that it gives a bearish signal to chartists, suggesting that the price will trend downward upon completion of the pattern. The descending triangle is constructed with a flat support line and a downward-sloping resistance line.
+        </article>
+        <article class="description" id="ascTriangle">
+            <strong>Ascending Triangle: </strong>
+            The ascending triangle is a bullish pattern, which gives an indication that the price of the security is headed higher upon completion. The pattern is formed by two trendlines: a flat trendline being a point of resistance and an ascending trendline acting as a price support.
+        </article>
+        <article class="description" id="megaphone">
+            <strong>Megaphone or Broadening Top: </strong>
+            A Megaphone Top also known as a Broadening Top is considered a bearish signal, indicating that the current uptrend may reverse to form a new downtrend.
+        </article>
+        <article class="description" id="ascWedge">
+            <strong>Ascending Broadening Wedge: </strong>
+            The ascending broadening wedge is a bearish reversal pattern formed by two diverging upward slants. To confirm an ascending broadening wedge, there must have oscillation between the two lines. Each line must be touched at least twice for validation.
+        </article>
+        <article class="description" id="desWedge">
+            <strong>Descending Broadening Wedge: </strong>
+            The descending broadening wedge is a bullish reversal pattern formed by two diverging downward slants. To confirm an descending broadening wedge, there must have oscillation between the two lines. Each line must be touched at least twice for validation.
+        </article>
+        <article class="description" id="ascRightAngle">
+            <strong>Ascending Broadening Right Angle: </strong>
+            The Ascending Broadening Right Angle is a bearish reversal pattern. The pattern is formed by two diverging lines, the support being a horizontal line and the resistance a bullish slant. 
+        </article>
+        <article class="description" id="desRightAngle">
+            <strong>Descending Broadening Right Angle: </strong>
+            The Descending Broadening Right Angle is a bullish reversal pattern. The pattern is formed by two diverging lines, the resistance being a horizontal line and the support a bearish slant.
+        </article>
+        <article class="description" id="notFound">
+            <strong>Pattern not found: </strong>
+            Please try again
+        </article>
+        <div style="display: none">
+            <img src="charts/nk.png" border="0" id="chart">
+        </div>
+        <div id="container">
+            <canvas id="imageView" width="1094" height="708">Your browser does not support canvas.</canvas>
+        </div>
+        <footer>
+            <p>Charts imported from Ameritrade IP Company, Inc. <br />
+            Pattern descriptions quoted from www.investopedia.com, www.thestockbandit.com, www.thepatternsite.com, www.forex-tribe.com and www.trending123.com</p>
+        </footer>
+    </div>
+</div>
+<script type="text/javascript" src="patterns.js"></script>
+</body>
+</html>
