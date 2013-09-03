@@ -219,6 +219,7 @@ $(function() {
             this.started = false;
 
             this.mousedown = function (ev) {
+                ev.preventDefault();
                 tool.started = true;
                 tool.x0 = ev._x;
                 tool.y0 = ev._y;

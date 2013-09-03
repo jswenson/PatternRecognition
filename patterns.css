@@ -27,10 +27,16 @@ header label{
     padding: 20px 30px;   
 }
 #container {
-    position: relative; float:left;
+    position: relative;
+    float:left;    
 }
 #imageTemp {
-    position: absolute; top: 1px; left: 1px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+#imageTemp, #imageView, #container {
+    cursor: url(pencil.png), crosshair;
 }
 div.directions{
     float: left;
