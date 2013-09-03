@@ -269,20 +269,25 @@ $(function() {
             };
         };       
     
-        $('#chartSelect').change( function(){
+        $('#chartSelect').change( function(){            
             var chosenVal = $(this).val();
             if(chosenVal === 'yen'){
+                $('#preloader').show();
                 img.src='charts/yen.png';                
             } else if(chosenVal === 'nkd'){
+                $('#preloader').show();
                 img.src='charts/nk.png';
             } else if(chosenVal === 'spm'){
+                $('#preloader').show();
                 img.src='charts/spm.png';
             } else if(chosenVal === 'spy'){
+                $('#preloader').show();
                 img.src='charts/spy.png';
             }
         });
             
         $(img).load(function(){
+            $('#preloader').hide();
             clear();
         });
         
