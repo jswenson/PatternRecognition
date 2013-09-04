@@ -10,7 +10,18 @@ $(function() {
         var channelMax = 10;
         var wedgeMax = 140;
         var a, b, c, d, atanA, atanB, foundAngle;
-
+        var nk, yen, spm, spy;
+        
+        function preloadimg() {
+            nk = document.createElement('img');
+            nk.src='charts/nk.png';
+            yen = document.createElement('img');
+            yen.src='charts/yen.png';
+            spm = document.createElement('img');
+            spm.src = 'charts/spm.png';
+            spy = document.createElement('img');
+            spy.src = 'charts/spy.png';
+        }
         function getAngle(line1dots, line2dots){ //calculates angle of lines crossing
             a = line1dots[2] - line1dots[0];
             b = line1dots[3] - line1dots[1];
@@ -272,26 +283,21 @@ $(function() {
         $('#chartSelect').change( function(){            
             var chosenVal = $(this).val();
             if(chosenVal === 'yen'){
-                $('#preloader').show();
-                img.src='charts/yen.png';                
+                img.src=yen.src;                
             } else if(chosenVal === 'nkd'){
-                $('#preloader').show();
-                img.src='charts/nk.png';
+                img.src=nk.src;
             } else if(chosenVal === 'spm'){
-                $('#preloader').show();
-                img.src='charts/spm.png';
+                img.src=spm.src;
             } else if(chosenVal === 'spy'){
-                $('#preloader').show();
-                img.src='charts/spy.png';
+                img.src=spy.src;
             }
         });
             
         $(img).load(function(){
-            $('#preloader').hide();
             clear();
         });
-        
-        init();
+        preloadimg();
+        init();        
     };
     
     if(window.addEventListener) {
